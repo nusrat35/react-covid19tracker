@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, CircularProgress } from '@mui/material';
+import { Box, Typography, CircularProgress, Divider } from '@mui/material';
 import CovidCard from './CovidCard';
 import AllCountryTable from './AllCountryTable';
+import useStyles from './styles'
 
 const CovidTracker = () => {
     const [coronaData, setcoronaData] = useState({});
@@ -9,6 +10,8 @@ const CovidTracker = () => {
     const [highestCaseCountry, sethighestCaseCountry] = useState({});
     const [highestDeathCountry, sethighestDeathCountry] = useState({});
     const [loader, setloader] = useState(true)
+
+    const classes = useStyles();
 
     const getData = async () => {
         try {
@@ -60,7 +63,6 @@ const CovidTracker = () => {
             <>
                 <div style={{ background: 'rgba(0,128,128, 0.2)', paddingBottom: "30px" }}>
                     <Typography variant="h6" style={{ textAlign: "center", padding: "10px", color: "red" }}>Covid19  Updates</Typography>
-                    {/* <Divider className={classes.dividerColor1} /> */}
                     <Box
                         sx={{
                             display: 'flex',
@@ -81,21 +83,25 @@ const CovidTracker = () => {
 
 
                     </Box>
-                    <Typography variant="h6" style={{ textAlign: "center", paddingTop: "12px" }}>Reported Cases and Deaths by Country</Typography>
+                    <Typography variant="h6" style={{ textAlign: "center", paddingTop: "12px", fontWeight:"bold" }}>Reported Cases and Deaths by Country</Typography>
+                    <Divider/>
                     <Typography style={{ textAlign: "center", padding: "8px" }}>
                         The coronavirus <b>COVID-19</b> is affecting
                         <b style={{ color: 'red' }}> {coronaData.length} </b>
                         countries and territories. The day is reset after midnight GMT+0.
                     </Typography>
+                    <Divider/>
                     <Typography style={{ textAlign: "center", padding: "8px" }}>
                         Today Highest Covid-19 affected in
                         <b style={{ color: 'red' }}> {highestCaseCountry.country} ({highestCaseCountry.todayCases.toLocaleString('en-US')})</b>
                     </Typography>
+                    <Divider/>
                     <Typography style={{ textAlign: "center", padding: "8px" }}>
                         Today Highest Covid-19 deaths in
                         <b style={{ color: 'red' }}> {highestDeathCountry.country} ({highestDeathCountry.todayDeaths.toLocaleString('en-US')})</b>
                     </Typography>
-
+                    <Divider />
+                    <Typography className={classes.covidStat}>Covid-19 Statistics</Typography>
                     <AllCountryTable {...coronaData} />
                 </div>
             </>

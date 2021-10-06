@@ -11,4 +11,13 @@ export default makeStyles((theme) => ({
     covidCardHeader:{
         textAlign:"center",padding:"8px",
     },
+    covidStat: { 
+        textAlign: "center", 
+        paddingTop: "8px", 
+        paddingBottom:"8px", 
+        backgroundColor:'RGB(0,128,128)' ,
+        width: '90%',
+        margin:'auto',
+        marginTop:'20px',
+        color:'white'}
 }));
