@@ -28,14 +28,12 @@ const CovidCard = ({ bgColor,
                 <Divider />
                 <Divider />
                 <Typography style={{ padding: "9px" }}> 
-                    {caseName} 
-                    cases: {caseName === "Total" ? 
+                    {caseName} cases: {caseName === "Total" ? 
                         (cases !== 0 &&cases.toLocaleString('en-US')) : (todayCases !== 0 && todayCases.toLocaleString('en-Us'))}
                 </Typography>
                 <Divider />
                 <Typography style={{ padding: "9px" }}> 
-                    {caseName} 
-                    deaths: {caseName === "Total" ? 
+                    {caseName} deaths: {caseName === "Total" ? 
                         (deaths!==0 && deaths.toLocaleString('en-Us')) : (todayDeaths!==0 && todayDeaths.toLocaleString('en-US'))}
                 </Typography>
                 <Divider />
