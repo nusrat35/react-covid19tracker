@@ -2,6 +2,8 @@
 
 Coronavirus-19 API based tracker application created with React.js. 
 
+![alt text](https://github.com/nusrat35/react-covid19tracker/blob/main/public/covid19Title.PNG "Title image")
+
 ## Live URL
 I deployed it in my github pages. You can visit [here](https://nusrat35.github.io/react-covid19tracker/)
 
